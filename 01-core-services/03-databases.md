@@ -1,4 +1,4 @@
-# Databases `[Mid]`
+# Databases
 
 ## Decision Framework
 

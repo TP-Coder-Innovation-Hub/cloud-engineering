@@ -1,4 +1,4 @@
-# What Is the Cloud `[Entry]`
+# What Is the Cloud
 
 ## Renting Computers Instead of Buying Them
 
@@ -9,6 +9,8 @@ On-premises: you buy servers, rack them, power them, cool them, replace broken d
 | On-Premises | Cloud |
 |-------------|-------|
 | Buying a house | Renting an apartment |
+
+> 🖼️ **[IMAGE_PLACEHOLDER]** — on-premises vs cloud buying house vs renting apartment
 | You fix the plumbing | Landlord fixes the plumbing |
 | Pay mortgage regardless | Pay rent for what you use |
 | Hard to move | Move anytime |
@@ -16,6 +18,8 @@ On-premises: you buy servers, rack them, power them, cool them, replace broken d
 ## Service Models
 
 Three layers of abstraction. Each trades control for convenience:
+
+> 🖼️ **[IMAGE_PLACEHOLDER]** — IaaS PaaS SaaS abstraction layers service models
 
 ```
 +------------------+

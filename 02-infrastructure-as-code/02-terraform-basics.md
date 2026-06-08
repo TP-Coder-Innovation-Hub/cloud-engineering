@@ -1,4 +1,4 @@
-# Terraform Basics `[Mid]`
+# Terraform Basics
 
 ## Core Concepts
 

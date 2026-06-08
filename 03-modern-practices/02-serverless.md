@@ -1,4 +1,4 @@
-# Serverless `[Mid]`
+# Serverless
 
 ## Functions-as-a-Service
 
@@ -33,6 +33,8 @@ def handler(event, context):
 ## Event-Driven Architecture
 
 Serverless excels when work is triggered by events, not by constant user traffic.
+
+> 🖼️ **[IMAGE_PLACEHOLDER]** — serverless event-driven architecture API gateway S3 SQS triggers
 
 ```yaml
 event_sources:

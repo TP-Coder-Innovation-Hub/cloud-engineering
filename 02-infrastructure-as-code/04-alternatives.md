@@ -1,4 +1,4 @@
-# Alternatives `[Senior]`
+# Alternatives
 
 ## Landscape
 

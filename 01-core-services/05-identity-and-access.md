@@ -1,4 +1,4 @@
-# Identity and Access `[Mid]`
+# Identity and Access
 
 ## IAM: Who Can Do What
 
@@ -21,6 +21,8 @@ iam_concepts:
 ```
 
 ## How Evaluation Works
+
+> 🖼️ **[IMAGE_PLACEHOLDER]** — IAM policy evaluation explicit deny allow implicit deny flow
 
 ```
 Request arrives

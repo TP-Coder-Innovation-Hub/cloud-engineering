@@ -1,6 +1,8 @@
-# Storage `[Mid]`
+# Storage
 
 ## Three Types
+
+> 🖼️ **[IMAGE_PLACEHOLDER]** — object block file storage types comparison when to use
 
 | Type | Access Pattern | Examples | Think of It As |
 |------|---------------|----------|----------------|

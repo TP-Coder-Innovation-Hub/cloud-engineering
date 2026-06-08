@@ -1,6 +1,8 @@
-# Well-Architected `[Senior]`
+# Well-Architected
 
 ## The Five Pillars
+
+> 🖼️ **[IMAGE_PLACEHOLDER]** — well-architected five pillars operational security reliability performance cost
 
 Every architectural decision involves trade-offs. The Well-Architected Framework provides a structured way to evaluate them.
 

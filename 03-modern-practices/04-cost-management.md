@@ -1,4 +1,4 @@
-# Cost Management `[Mid]`
+# Cost Management
 
 ## Cloud Bills Shock
 

@@ -1,6 +1,8 @@
-# Why IaC `[Mid]`
+# Why IaC
 
 ## ClickOps vs Code
+
+> 🖼️ **[IMAGE_PLACEHOLDER]** — clickOps manual console vs infrastructure as code Git workflow
 
 ```yaml
 clickops:

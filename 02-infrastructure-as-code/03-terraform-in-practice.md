@@ -1,4 +1,4 @@
-# Terraform in Practice `[Senior]`
+# Terraform in Practice
 
 ## Modules
 

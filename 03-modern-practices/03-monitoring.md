@@ -1,4 +1,4 @@
-# Monitoring `[Senior]`
+# Monitoring
 
 ## The Three Pillars
 

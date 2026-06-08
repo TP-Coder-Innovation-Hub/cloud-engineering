@@ -9,7 +9,7 @@ Cloud engineering curriculum organized as directory-per-topic. Each `.md` file i
 - 200-500 words per file
 - YAML configs and pseudocode for examples (language-agnostic)
 - Mermaid diagrams for architecture and flows
-- Level badges: `[Entry]`, `[Mid]`, `[Senior]`
+- Level badges:,,
 - No emojis. Direct, concise tone.
 - Assumes reader has programming experience
 

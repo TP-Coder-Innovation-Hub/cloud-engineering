@@ -1,4 +1,4 @@
-# Cloud Providers `[Entry]`
+# Cloud Providers
 
 ## The Big Three
 

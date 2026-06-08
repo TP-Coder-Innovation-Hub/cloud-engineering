@@ -1,8 +1,10 @@
-# Regions and Zones `[Entry]`
+# Regions and Zones
 
 ## Geography Matters
 
 Cloud providers operate data centers worldwide. Where you deploy affects latency, compliance, cost, and resilience.
+
+> 🖼️ **[IMAGE_PLACEHOLDER]** — cloud region availability zone data center hierarchy diagram
 
 ```
 Region (e.g., us-east-1)

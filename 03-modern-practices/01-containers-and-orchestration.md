@@ -1,8 +1,10 @@
-# Containers and Orchestration `[Mid]`
+# Containers and Orchestration
 
 ## Docker Mental Model
 
 A container is a running process isolated from other processes. It shares the host kernel but has its own filesystem, network, and process space.
+
+> 🖼️ **[IMAGE_PLACEHOLDER]** — virtual machine vs container architecture hypervisor vs runtime
 
 ```
 Virtual Machine                          Container

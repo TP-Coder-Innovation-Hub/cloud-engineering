@@ -1,4 +1,4 @@
-# Compute `[Mid]`
+# Compute
 
 ## Three Models
 
@@ -16,6 +16,8 @@ models:
 ```
 
 ## Decision Tree
+
+> 🖼️ **[IMAGE_PLACEHOLDER]** — compute decision tree VM containers serverless
 
 ```
 Need to run arbitrary software or full OS control?

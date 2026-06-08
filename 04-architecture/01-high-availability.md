@@ -1,4 +1,4 @@
-# High Availability `[Senior]`
+# High Availability
 
 ## Designing for Failure
 
@@ -28,6 +28,8 @@ availability_targets:
 Each additional nine costs exponentially more. Do not chase nines you do not need.
 
 ## Multi-AZ Architecture
+
+> 🖼️ **[IMAGE_PLACEHOLDER]** — multi-AZ high availability deployment primary replica failover
 
 ```yaml
 # Single AZ (bad)
@@ -68,6 +70,8 @@ graph TD
 ```
 
 ## Multi-Region Architecture
+
+> 🖼️ **[IMAGE_PLACEHOLDER]** — active-passive vs active-active multi-region architecture
 
 For global users or disaster recovery. Replicate across geographic regions.
 

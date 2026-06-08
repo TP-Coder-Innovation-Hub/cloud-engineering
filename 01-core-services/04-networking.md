@@ -1,6 +1,8 @@
-# Networking `[Mid]`
+# Networking
 
 ## The Plumbing
+
+> 🖼️ **[IMAGE_PLACEHOLDER]** — VPC virtual private cloud public private subnets load balancer NAT
 
 Networking connects everything. Understanding it prevents outages and security holes.
 

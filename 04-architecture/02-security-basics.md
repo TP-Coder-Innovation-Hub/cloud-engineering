@@ -1,4 +1,4 @@
-# Security Basics `[Senior]`
+# Security Basics
 
 ## Encryption
 

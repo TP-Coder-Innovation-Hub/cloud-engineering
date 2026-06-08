@@ -1,8 +1,10 @@
-# Responsibility Model `[Entry]`
+# Responsibility Model
 
 ## Shared Responsibility
 
 The cloud provider secures the infrastructure. You secure what you put on it. The line between "their job" and "your job" depends on the service model.
+
+> 🖼️ **[IMAGE_PLACEHOLDER]** — shared responsibility model provider vs customer SaaS PaaS IaaS
 
 ```
 Responsibility         SaaS    PaaS    IaaS    On-Prem

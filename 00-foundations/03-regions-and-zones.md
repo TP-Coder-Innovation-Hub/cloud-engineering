@@ -4,7 +4,16 @@
 
 Cloud providers operate data centers worldwide. Where you deploy affects latency, compliance, cost, and resilience.
 
-> 🖼️ **[IMAGE_PLACEHOLDER]** — cloud region availability zone data center hierarchy diagram
+```mermaid
+graph TD
+    REG["Region\n(e.g., ap-southeast-1\nSingapore)"] --> AZ1["AZ 1\nData Center 1a"]
+    REG --> AZ2["AZ 2\nData Center 1b"]
+    REG --> AZ3["AZ 3\nData Center 1c"]
+    AZ1 --> R1["Rack of servers"]
+    AZ2 --> R2["Rack of servers"]
+    AZ3 --> R3["Rack of servers"]
+    Note["AZs: isolated but low-latency\nRegions: fully independent"]
+```
 
 ```
 Region (e.g., us-east-1)

@@ -4,7 +4,16 @@
 
 The cloud provider secures the infrastructure. You secure what you put on it. The line between "their job" and "your job" depends on the service model.
 
-> 🖼️ **[IMAGE_PLACEHOLDER]** — shared responsibility model provider vs customer SaaS PaaS IaaS
+```mermaid
+graph LR
+    subgraph "Provider Manages"
+        PM["Physical security\nHardware\nNetwork\nFacility"]
+    end
+    subgraph "Customer Manages"
+        CM["Data\nAccess control\nEncryption\nCompliance"]
+    end
+    PM <-->|"Shared"| CM
+```
 
 ```
 Responsibility         SaaS    PaaS    IaaS    On-Prem

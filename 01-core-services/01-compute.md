@@ -17,7 +17,16 @@ models:
 
 ## Decision Tree
 
-> 🖼️ **[IMAGE_PLACEHOLDER]** — compute decision tree VM containers serverless
+```mermaid
+flowchart TD
+    Start[What do you need?] --> Q1{Need full OS control?}
+    Q1 -->|Yes| VM[Use VMs / EC2]
+    Q1 -->|No| Q2{Running containers?}
+    Q2 -->|Yes| CONT[Use Containers / ECS / K8s]
+    Q2 -->|No| Q3{Short-lived, event-driven?}
+    Q3 -->|Yes| SVR[Use Serverless / Lambda]
+    Q3 -->|No| VM
+```
 
 ```
 Need to run arbitrary software or full OS control?

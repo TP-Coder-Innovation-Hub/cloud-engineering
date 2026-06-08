@@ -2,7 +2,16 @@
 
 ## The Plumbing
 
-> 🖼️ **[IMAGE_PLACEHOLDER]** — VPC virtual private cloud public private subnets load balancer NAT
+```mermaid
+graph TD
+    INET[Internet] --> IGW[Internet Gateway]
+    IGW --> PUB["Public Subnet\nLoad Balancer\nNAT Gateway"]
+    IGW --> LB[Load Balancer]
+    LB --> PRIV["Private Subnet\nApp Servers"]
+    PRIV --> PRIVDB["Private Subnet\nDatabase"]
+    PRIV -->|"outbound via"| NAT["NAT Gateway"]
+    NAT --> IGW
+```
 
 Networking connects everything. Understanding it prevents outages and security holes.
 

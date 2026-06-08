@@ -34,7 +34,15 @@ def handler(event, context):
 
 Serverless excels when work is triggered by events, not by constant user traffic.
 
-> 🖼️ **[IMAGE_PLACEHOLDER]** — serverless event-driven architecture API gateway S3 SQS triggers
+```mermaid
+graph TD
+    API["API Gateway"] -->|"HTTP trigger"| F1["Function A"]
+    S3["S3 Bucket"] -->|"object created"| F2["Function B"]
+    SQS["SQS Queue"] -->|"message"| F3["Function C"]
+    CRON["Schedule"] -->|"timer"| F4["Function D"]
+    F1 --> DB[(Database)]
+    F2 --> SNS["SNS Topic"]
+```
 
 ```yaml
 event_sources:

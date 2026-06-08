@@ -2,7 +2,12 @@
 
 ## Three Types
 
-> 🖼️ **[IMAGE_PLACEHOLDER]** — object block file storage types comparison when to use
+```mermaid
+graph TD
+    OBJ["Object Storage (S3)\nFiles, images, backups\nHTTP access"] --> WHEN1["Use: static assets, logs"]
+    BLK["Block Storage (EBS)\nDisk volumes for VMs\nLow latency"] --> WHEN2["Use: database, VM boot"]
+    FILE["File Storage (EFS)\nShared file system\nNFS access"] --> WHEN3["Use: shared configs, media"]
+```
 
 | Type | Access Pattern | Examples | Think of It As |
 |------|---------------|----------|----------------|

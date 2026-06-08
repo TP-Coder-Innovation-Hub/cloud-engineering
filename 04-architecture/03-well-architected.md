@@ -2,7 +2,14 @@
 
 ## The Five Pillars
 
-> 🖼️ **[IMAGE_PLACEHOLDER]** — well-architected five pillars operational security reliability performance cost
+```mermaid
+graph TD
+    WA["Well-Architected Framework"] --> OP["Operational\nExcellence"]
+    WA --> SEC["Security"]
+    WA --> REL["Reliability"]
+    WA --> PERF["Performance\nEfficiency"]
+    WA --> COST["Cost\nOptimization"]
+```
 
 Every architectural decision involves trade-offs. The Well-Architected Framework provides a structured way to evaluate them.
 

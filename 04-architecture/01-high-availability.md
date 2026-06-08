@@ -29,7 +29,14 @@ Each additional nine costs exponentially more. Do not chase nines you do not nee
 
 ## Multi-AZ Architecture
 
-> 🖼️ **[IMAGE_PLACEHOLDER]** — multi-AZ high availability deployment primary replica failover
+```mermaid
+graph TD
+    LB[Load Balancer] --> AZ1["AZ 1\nPrimary DB"]
+    LB --> AZ2["AZ 2\nReplica DB"]
+    AZ1 -->|"sync replication"| AZ2
+    AZ1 -.->|"if fails"| FAILOVER["Traffic → AZ2\nAuto-promote replica"]
+    FAILOVER --> AZ2
+```
 
 ```yaml
 # Single AZ (bad)
@@ -71,7 +78,18 @@ graph TD
 
 ## Multi-Region Architecture
 
-> 🖼️ **[IMAGE_PLACEHOLDER]** — active-passive vs active-active multi-region architecture
+```mermaid
+graph TD
+    subgraph "Active-Passive"
+        AP1["Region 1\nACTIVE"] -->|"replicate"| AP2["Region 2\nSTANDBY"]
+        AP2 -.->|"failover only"| AP1
+    end
+    subgraph "Active-Active"
+        AA1["Region 1\nACTIVE"] <-->|"replicate"| AA2["Region 2\nACTIVE"]
+        DNS["DNS Route 53"] -->|"50/50"| AA1
+        DNS -->|"50/50"| AA2
+    end
+```
 
 For global users or disaster recovery. Replicate across geographic regions.
 

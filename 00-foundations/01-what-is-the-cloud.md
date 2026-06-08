@@ -10,7 +10,21 @@ On-premises: you buy servers, rack them, power them, cool them, replace broken d
 |-------------|-------|
 | Buying a house | Renting an apartment |
 
-> 🖼️ **[IMAGE_PLACEHOLDER]** — on-premises vs cloud buying house vs renting apartment
+```mermaid
+graph LR
+    subgraph "On-Premises (Buy House)"
+        O1["Big upfront cost"]
+        O2["You maintain everything"]
+        O3["Fixed capacity"]
+        O4["Full control"]
+    end
+    subgraph "Cloud (Rent Apartment)"
+        C1["Pay as you go"]
+        C2["Landlord maintains"]
+        C3["Scale up/down"]
+        C4["Shared infrastructure"]
+    end
+```
 | You fix the plumbing | Landlord fixes the plumbing |
 | Pay mortgage regardless | Pay rent for what you use |
 | Hard to move | Move anytime |
@@ -19,7 +33,17 @@ On-premises: you buy servers, rack them, power them, cool them, replace broken d
 
 Three layers of abstraction. Each trades control for convenience:
 
-> 🖼️ **[IMAGE_PLACEHOLDER]** — IaaS PaaS SaaS abstraction layers service models
+```mermaid
+graph TD
+    SAAS["SaaS — Full product\n(Gmail, Notion)"] --> PAAS["PaaS — Platform\n(Heroku, App Engine)"]
+    PAAS --> IAAS["IaaS — Infrastructure\n(EC2, VMs)"]
+    IAAS --> DC["Data Center\n(Physical hardware)"]
+    
+    Y1["You manage: nothing"] --> SAAS
+    Y2["You manage: app code"] --> PAAS
+    Y3["You manage: OS + runtime + app"] --> IAAS
+    Y4["You manage: everything"] --> DC
+```
 
 ```
 +------------------+

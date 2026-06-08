@@ -2,7 +2,23 @@
 
 ## ClickOps vs Code
 
-> 🖼️ **[IMAGE_PLACEHOLDER]** — clickOps manual console vs infrastructure as code Git workflow
+```mermaid
+graph LR
+    subgraph "ClickOps (Manual)"
+        M1["Person clicks console"]
+        M2["No audit trail"]
+        M3["Can't reproduce"]
+        M4["Drift happens"]
+        M1 --> M2 --> M3 --> M4
+    end
+    subgraph "IaC (Code)"
+        C1["Write Terraform"]
+        C2["Git commit (versioned)"]
+        C3["CI applies changes"]
+        C4["Reproducible always"]
+        C1 --> C2 --> C3 --> C4
+    end
+```
 
 ```yaml
 clickops:

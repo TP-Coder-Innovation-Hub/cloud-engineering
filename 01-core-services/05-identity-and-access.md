@@ -22,7 +22,14 @@ iam_concepts:
 
 ## How Evaluation Works
 
-> 🖼️ **[IMAGE_PLACEHOLDER]** — IAM policy evaluation explicit deny allow implicit deny flow
+```mermaid
+flowchart TD
+    REQ[Access Request] --> D1{Explicit DENY?}
+    D1 -->|Yes| DENIED["❌ DENIED"]
+    D1 -->|No| A1{Explicit ALLOW?}
+    A1 -->|Yes| ALLOWED["✅ ALLOWED"]
+    A1 -->|No| IMPLICIT["❌ IMPLICIT DENY\n(no matching rule)"]
+```
 
 ```
 Request arrives

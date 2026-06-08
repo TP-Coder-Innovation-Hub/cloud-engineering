@@ -4,7 +4,31 @@
 
 A container is a running process isolated from other processes. It shares the host kernel but has its own filesystem, network, and process space.
 
-> 🖼️ **[IMAGE_PLACEHOLDER]** — virtual machine vs container architecture hypervisor vs runtime
+```mermaid
+graph TD
+    subgraph "Virtual Machine"
+        VM_HW["Hardware"]
+        VM_OS["Host OS"]
+        VM_HY["Hypervisor"]
+        VM1["Guest OS + App"]
+        VM2["Guest OS + App"]
+        VM3["Guest OS + App"]
+        VM_HW --> VM_OS --> VM_HY --> VM1
+        VM_HY --> VM2
+        VM_HY --> VM3
+    end
+    subgraph "Container"
+        C_HW["Hardware"]
+        C_OS["Host OS"]
+        C_RT["Container Runtime"]
+        C1["App + Libs"]
+        C2["App + Libs"]
+        C3["App + Libs"]
+        C_HW --> C_OS --> C_RT --> C1
+        C_RT --> C2
+        C_RT --> C3
+    end
+```
 
 ```
 Virtual Machine                          Container

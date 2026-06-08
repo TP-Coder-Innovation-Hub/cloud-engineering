@@ -2,24 +2,23 @@
 
 ## Decision Framework
 
-```
-Is your data relational with complex queries?
-├── Yes → Relational (SQL)
-│   └── Need horizontal scale beyond single node?
-│       ├── Yes → Distributed SQL (Aurora, Cloud Spanner)
-│       └── No → Managed SQL (RDS, Cloud SQL, Azure SQL)
-└── No → What is the access pattern?
-    ├── Key-value lookups → DynamoDB / Cosmos DB
-    ├── Documents with varying schemas → MongoDB / Firestore
-    ├── Time-series data → InfluxDB / Timestream
-    ├── Wide-column, massive scale → Cassandra / Bigtable
-    └── Graph relationships → Neptune / Cosmos Gremlin
+```mermaid
+flowchart TD
+    Q1{"Is your data relational\nwith complex queries?"}
+    Q1 -->|Yes| SQL["Relational (SQL)"]
+    SQL --> Q2{"Need horizontal scale\nbeyond single node?"}
+    Q2 -->|Yes| DSQL["Distributed SQL\n(Aurora, Cloud Spanner)"]
+    Q2 -->|No| MSQL["Managed SQL\n(RDS, Cloud SQL, Azure SQL)"]
 
-Need sub-millisecond reads?
-└── Yes → Cache layer (Redis / Memcached) in front of primary DB
+    Q1 -->|No| Q3{"What is the access pattern?"}
+    Q3 --> KV["Key-value lookups\nDynamoDB / Cosmos DB"]
+    Q3 --> DOC["Documents with varying schemas\nMongoDB / Firestore"]
+    Q3 --> TS["Time-series data\nInfluxDB / Timestream"]
+    Q3 --> WC["Wide-column, massive scale\nCassandra / Bigtable"]
+    Q3 --> GR["Graph relationships\nNeptune / Cosmos Gremlin"]
 
-Need full-text search?
-└── Yes → Search engine (OpenSearch / Elasticsearch)
+    Q4{"Need sub-millisecond reads?"} -->|Yes| CACHE["Cache layer\n(Redis / Memcached)\nin front of primary DB"]
+    Q5{"Need full-text search?"} -->|Yes| SEARCH["Search engine\n(OpenSearch / Elasticsearch)"]
 ```
 
 ## Relational (SQL)

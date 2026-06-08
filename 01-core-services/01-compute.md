@@ -28,19 +28,24 @@ flowchart TD
     Q3 -->|No| VM
 ```
 
-```
-Need to run arbitrary software or full OS control?
-├── Yes → VMs
-│   └── Need to run many containers at scale?
-│       ├── Yes → Kubernetes (managed)
-│       └── No → VMs or small container service (ECS, Cloud Run)
-└── No → Short-lived, event-triggered work?
-    ├── Yes → Serverless functions
-    │   └── Need more than 15 min execution time?
-    │       └── Yes → Containers or VMs
-    └── No → Long-running service with predictable load?
-        ├── Yes → Containers
-        └── No → Serverless or containers
+```mermaid
+flowchart TD
+    Q0{"Need to run arbitrary software\nor full OS control?"}
+    Q0 -->|Yes| VM1["VMs"]
+    Q0 -->|No| Q4{"Short-lived, event-triggered work?"}
+
+    VM1 --> Q1{"Need to run many\ncontainers at scale?"}
+    Q1 -->|Yes| K8S["Kubernetes (managed)"]
+    Q1 -->|No| SMALL["VMs or small container service\n(ECS, Cloud Run)"]
+
+    Q4 -->|Yes| SVR["Serverless functions"]
+    SVR --> Q2{"Need more than\n15 min execution time?"}
+    Q2 -->|Yes| CONT2["Containers or VMs"]
+    Q2 -->|No| SVR
+
+    Q4 -->|No| Q3{"Long-running service with\npredictable load?"}
+    Q3 -->|Yes| CONT3["Containers"]
+    Q3 -->|No| SVR2["Serverless or containers"]
 ```
 
 ## Virtual Machines

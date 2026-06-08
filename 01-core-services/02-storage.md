@@ -101,14 +101,15 @@ cdn:
 
 ## Decision Framework
 
-```
-Need to share files between VMs?
-├── Yes → File storage
-└── No → Accessing via HTTP/API?
-    ├── Yes → Object storage + CDN for public content
-    └── No → Need low-latency block I/O?
-        ├── Yes → Block storage
-        └── No → Object storage (default choice)
+```mermaid
+flowchart TD
+    Q1{"Need to share files\nbetween VMs?"}
+    Q1 -->|Yes| FILE["File storage"]
+    Q1 -->|No| Q2{"Accessing via HTTP/API?"}
+    Q2 -->|Yes| OBJ["Object storage + CDN\nfor public content"]
+    Q2 -->|No| Q3{"Need low-latency\nblock I/O?"}
+    Q3 -->|Yes| BLK["Block storage"]
+    Q3 -->|No| OBJ2["Object storage\n(default choice)"]
 ```
 
 Object storage is the right answer 80% of the time. It is the default. Reach for block or file only when the use case demands it.

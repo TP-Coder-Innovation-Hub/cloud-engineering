@@ -30,21 +30,25 @@ graph TD
     end
 ```
 
-```
-Virtual Machine                          Container
-┌──────────────────┐                    ┌──────────────────┐
-│  App A           │                    │  App A           │
-│  ┌────────────┐  │                    └──────────────────┘
-│  │ Guest OS   │  │                    ┌──────────────────┐
-│  └────────────┘  │                    │  App B           │
-│  ┌────────────┐  │                    └──────────────────┘
-│  │ Hypervisor │  │                    ┌──────────────────┐
-│  └────────────┘  │                    │  Container       │
-│  Host OS         │                    │  Runtime         │
-└──────────────────┘                    │  ┌─────────────┐ │
-                                        │  │  Host OS    │ │
-                                        │  └─────────────┘ │
-                                        └──────────────────┘
+```mermaid
+graph LR
+    subgraph "Virtual Machine"
+        direction TB
+        VM_A["App A"]
+        VM_B["App B"]
+        VM_GOS["Guest OS (per app)"]
+        VM_HYP["Hypervisor"]
+        VM_HOS["Host OS"]
+        VM_HW["Hardware"]
+    end
+    subgraph "Container"
+        direction TB
+        C_A["App A"]
+        C_B["App B"]
+        C_RT["Container Runtime"]
+        C_HOS["Host OS"]
+        C_HW["Hardware"]
+    end
 ```
 
 A VM virtualizes hardware. A container virtualizes the OS. Containers start in milliseconds, not minutes.

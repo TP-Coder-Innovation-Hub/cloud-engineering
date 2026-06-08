@@ -67,17 +67,19 @@ event_sources:
     example: "Every day at 02:00 UTC triggers cleanup function"
 ```
 
-```
-Event Source          Function              Downstream
-─────────────        ──────────            ───────────
-API Gateway ────► process-order ────► Database
-                     │
-                     └───────► Notification Service
+```mermaid
+flowchart LR
+    API2["API Gateway"] --> PO["process-order"]
+    PO --> DB2[(Database)]
+    PO --> NS["Notification Service"]
 
-S3 Upload  ────► resize-image  ────► Processed Bucket
-             ────► extract-metadata ──► Metadata DB
+    S32["S3 Upload"] --> RI["resize-image"]
+    RI --> PB["Processed Bucket"]
+    S32 --> EM["extract-metadata"]
+    EM --> MDB["Metadata DB"]
 
-Cron (daily) ──► cleanup-expired ──► Database
+    CRON2["Cron (daily)"] --> CE["cleanup-expired"]
+    CE --> DB3[(Database)]
 ```
 
 ## When Serverless

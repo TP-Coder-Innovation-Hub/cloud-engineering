@@ -45,17 +45,12 @@ graph TD
     Y4["You manage: everything"] --> DC
 ```
 
-```
-+------------------+
-|  SaaS            |  <- Software: Gmail, Salesforce
-+------------------+
-|  PaaS            |  <- Platform: Heroku, App Engine
-+------------------+
-|  IaaS            |  <- Infrastructure: EC2, VMs
-+------------------+
-|  Physical Hardware|  <- The data center floor
-+------------------+
-```
+| Layer | Description | Examples |
+|-------|-------------|----------|
+| SaaS | Full product | Gmail, Salesforce |
+| PaaS | Platform | Heroku, App Engine |
+| IaaS | Infrastructure | EC2, VMs |
+| Physical Hardware | The data center floor | Servers, racks, power |
 
 - **IaaS** -- You manage OS, runtime, and app. Provider manages hardware. Maximum control, maximum responsibility.
 - **PaaS** -- You manage code. Provider manages runtime and below. Fastest path to deployment.

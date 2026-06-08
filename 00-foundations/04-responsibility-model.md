@@ -15,17 +15,15 @@ graph LR
     PM <-->|"Shared"| CM
 ```
 
-```
-Responsibility         SaaS    PaaS    IaaS    On-Prem
-─────────────────────  ──────  ──────  ──────  ────────
-Physical security      Them    Them    Them    You
-Network infrastructure Them    Them    Them    You
-Host OS               Them    Them    Them    You
-Runtime/Platform      Them    Them    You      You
-Application code       You     You     You      You
-Data                   You     You     You      You
-Identity/IAM           You     You     You      You
-```
+| Responsibility | SaaS | PaaS | IaaS | On-Prem |
+|---|---|---|---|---|
+| Physical security | Provider | Provider | Provider | You |
+| Network infrastructure | Provider | Provider | Provider | You |
+| Host OS | Provider | Provider | Provider | You |
+| Runtime/Platform | Provider | Provider | You | You |
+| Application code | You | You | You | You |
+| Data | You | You | You | You |
+| Identity/IAM | You | You | You | You |
 
 ## What the Provider Manages
 

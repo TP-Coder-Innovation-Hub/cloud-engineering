@@ -97,17 +97,16 @@ log_aggregation:
 
 A trace follows a single request across multiple services. Each service records a span.
 
-```
-Trace: abc-123-def (total: 450ms)
-│
-├── Span: API Gateway (5ms)
-│   └── Span: order-service (200ms)
-│       ├── Span: validate-order (20ms)
-│       └── Span: db.insert (175ms) ← bottleneck
-│           └── Span: database-query (170ms)
-│
-└── Span: notification-service (240ms)
-    └── Span: email.send (235ms)
+```mermaid
+flowchart TD
+    TRACE["Trace: abc-123-def\n(total: 450ms)"]
+    TRACE --> GW["Span: API Gateway (5ms)"]
+    GW --> OS["Span: order-service (200ms)"]
+    OS --> VO["Span: validate-order (20ms)"]
+    OS --> DBI["Span: db.insert (175ms) ← bottleneck"]
+    DBI --> DQ["Span: database-query (170ms)"]
+    TRACE --> NS2["Span: notification-service (240ms)"]
+    NS2 --> ES["Span: email.send (235ms)"]
 ```
 
 ```yaml

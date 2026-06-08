@@ -15,17 +15,15 @@ graph TD
     Note["AZs: isolated but low-latency\nRegions: fully independent"]
 ```
 
-```
-Region (e.g., us-east-1)
-├── Availability Zone 1 (us-east-1a)
-│   └── Data center(s)
-├── Availability Zone 2 (us-east-1b)
-│   └── Data center(s)
-└── Availability Zone 3 (us-east-1c)
-    └── Data center(s)
-
-Edge Locations (CloudFront, CDN)
-└── Spread across 100+ cities globally
+```mermaid
+graph TD
+    REG2["Region (e.g., us-east-1)"] --> AZ1B["AZ 1 (us-east-1a)"]
+    REG2 --> AZ2B["AZ 2 (us-east-1b)"]
+    REG2 --> AZ3B["AZ 3 (us-east-1c)"]
+    AZ1B --> DC1["Data center(s)"]
+    AZ2B --> DC2["Data center(s)"]
+    AZ3B --> DC3["Data center(s)"]
+    EDGE["Edge Locations (CloudFront, CDN)"] --> GLOBE["100+ cities globally"]
 ```
 
 ## Regions

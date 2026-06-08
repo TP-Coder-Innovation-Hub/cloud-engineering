@@ -31,15 +31,13 @@ flowchart TD
     A1 -->|No| IMPLICIT["❌ IMPLICIT DENY\n(no matching rule)"]
 ```
 
-```
-Request arrives
-    │
-    ▼
-Is there an explicit DENY?
-├── Yes → REJECTED
-└── No → Is there an ALLOW?
-    ├── Yes → ALLOWED
-    └── No → IMPLICIT DENY (rejected)
+```mermaid
+flowchart TD
+    REQ2["Request arrives"] --> D2{"Is there an explicit DENY?"}
+    D2 -->|Yes| REJ["REJECTED"]
+    D2 -->|No| A2{"Is there an ALLOW?"}
+    A2 -->|Yes| ALLOW2["ALLOWED"]
+    A2 -->|No| IMPL["IMPLICIT DENY (rejected)"]
 ```
 
 Default: everything is denied. You must explicitly allow. If any policy denies, it overrides all allows.

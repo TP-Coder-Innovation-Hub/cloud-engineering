@@ -73,24 +73,21 @@ terraform destroy
 
 ## The Workflow
 
+```mermaid
+flowchart TD
+    A["Write .tf files"] --> B["terraform init"]
+    B --> C["terraform plan"]
+    C --> D["Review plan"]
+    D --> E["terraform apply"]
+    E --> F["State updated"]
 ```
-Write .tf files
-      │
-      ▼
-terraform init      ← download providers, initialize backend
-      │
-      ▼
-terraform plan      ← compare desired state vs actual state, show diff
-      │
-      ▼
-Review plan         ← READ THE PLAN. Every time.
-      │
-      ▼
-terraform apply     ← execute the plan, update state
-      │
-      ▼
-State updated       ← terraform.tfstate reflects new reality
-```
+
+1. **Write .tf files** — define your desired infrastructure
+2. **terraform init** — download providers, initialize backend
+3. **terraform plan** — compare desired state vs actual state, show diff
+4. **Review plan** — READ THE PLAN. Every time.
+5. **terraform apply** — execute the plan, update state
+6. **State updated** — terraform.tfstate reflects new reality
 
 ## State
 

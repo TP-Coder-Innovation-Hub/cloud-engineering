@@ -15,32 +15,15 @@ graph TD
 
 Networking connects everything. Understanding it prevents outages and security holes.
 
-```
-Internet
-    │
-    ▼
-┌─────────────┐
-│  Cloud DNS  │  (Route 53, Cloud DNS, Azure DNS)
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│  CDN Edge   │  (CloudFront, Cloud CDN, Azure CDN)
-└──────┬──────┘
-       │
-       ▼
-┌─────────────────────────────────────────────┐
-│                  VPC / VNet                  │
-│  ┌──────────────┐    ┌──────────────┐       │
-│  │ Public Subnet│    │Public Subnet │       │
-│  │  Load Balancer│   │  NAT Gateway │       │
-│  └──────┬───────┘    └──────┬───────┘       │
-│         │                   │               │
-│  ┌──────▼───────┐    ┌──────▼───────┐       │
-│  │Private Subnet│    │Private Subnet│       │
-│  │  Web Servers │    │  Database    │       │
-│  └──────────────┘    └──────────────┘       │
-└─────────────────────────────────────────────┘
+```mermaid
+graph TD
+    INET["Internet"] --> DNS["Cloud DNS\n(Route 53, Cloud DNS, Azure DNS)"]
+    DNS --> CDN["CDN Edge\n(CloudFront, Cloud CDN, Azure CDN)"]
+    CDN --> VPC["VPC / VNet"]
+    VPC --> PUB1["Public Subnet\nLoad Balancer"]
+    VPC --> PUB2["Public Subnet\nNAT Gateway"]
+    PUB1 --> PRIV1["Private Subnet\nWeb Servers"]
+    PUB2 --> PRIV2["Private Subnet\nDatabase"]
 ```
 
 ## VPC / VNet
